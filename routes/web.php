@@ -57,7 +57,6 @@ Route::get('/recipe', [
 Route::post('/recipe', [
     'uses' => 'RecipeController@postRecipe',
     'as' => 'recipe.post',
-    'middleware' => ['auth'], 
 ]);
 Route::get('/recipe/{singleRecipe}', [
     'uses' => 'RecipeController@getRecipe',
