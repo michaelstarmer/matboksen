@@ -17,7 +17,7 @@
               </form>
               <ul class="nav navbar-nav navbar-right">
                       <li><a href="#">{{ Auth::user()->getNameOrUsername() }}</a></li>
-                      <li><a href="#">Oppdater profil</a></li>
+                      <li><a href="#">Oppdater profilAA</a></li>
                       <li><a href="{{ route('auth.signout') }}">Logg ut</a></li>
               </ul>
           </div>
