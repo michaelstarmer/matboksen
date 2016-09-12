@@ -45,7 +45,7 @@ class RecipeController extends Controller
         $this->validate($request, [
             'title' => 'required|max:100',
         ]);
-        $recipe = new Recipe;
+/*        $recipe = new Recipe;
         $recipe->title = $request->title;
         $recipe->description = $request->description;
         $recipe->process = $request->process;
@@ -64,7 +64,7 @@ class RecipeController extends Controller
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'process' => $request->input('process'),
-        ]);
+        ]);*/
 
         //DB::table('ingredients')->belongsToRecipe()->insert($capture_field_vals);
 
