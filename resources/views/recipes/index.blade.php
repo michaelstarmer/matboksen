@@ -60,7 +60,7 @@
                                         </div>
 
                                         <button type="submit" name="registerform" class="btn">Legg i dåsa!</button>
-                                        <input type="hidden" name="_token" value="{{ Session::token() }}">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     </form>
                                 </div>
                             </div>
