@@ -61,11 +61,11 @@ class RecipeController extends Controller
             $recipe->ingredients()->create(['ingredient' => $ingredient]);
         }*/
 
-          Auth::user()->recipes()->create([
+/*          Auth::user()->recipes()->create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'process' => $request->input('process'),
-        ]);
+        ]);*/
 
         //DB::table('ingredients')->belongsToRecipe()->insert($capture_field_vals);
 
