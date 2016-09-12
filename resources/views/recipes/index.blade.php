@@ -48,7 +48,7 @@
                                             <textarea type="text" name="description" placeholder="En kort beskrivelse..." class="form-last-name form-control"></textarea>  
                                         </div>
                                         <div class="ingredient-wrapper">
-                                            <div class="form-group{{ $errors->has('ingredients') ? ' has-error' : '' }}">
+                                            <div class="form-group{{ $errors->has('ingredients') ? ' has-error' : '' }} iwrap">
                                                 <label class="sr-only" for="reg-lastname">Etternavn</label>
                                                 <input type="text" name="ingredients[]" placeholder="Ingredienser..." class="form-last-name form-control">
                                             </div>
@@ -56,7 +56,7 @@
                                         <button type="button" class="btn btn-info add-fields-button">Legg til...</button>
 
                                         <div class="process-wrapper">
-                                            <div class="form-group{{ $errors->has('process') ? ' has-error' : '' }}">
+                                            <div class="form-group{{ $errors->has('process') ? ' has-error' : '' }} pwrap">
                                                 <label class="sr-only" for="reg-lastname">Etternavn</label>
                                                 <textarea type="text" name="processes[]" placeholder="Fremgangsmåte..." class="form-last-name form-control"></textarea>  
                                             </div>

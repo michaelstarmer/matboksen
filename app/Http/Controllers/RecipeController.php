@@ -28,12 +28,15 @@ class RecipeController extends Controller
         ->where('recipe_id', $recipeId->id)
         ->get();
 
+        $stepsForRecipe = DB::table('processes')->select('process')
+        ->where('recipe_id', $recipeId->id)
+        ->get();
 
         if (!$recipe) {
             abort(404);
         }
 
-        return view('recipes.show')->with('recipe', $recipe)->with('ingrForRecipe', $ingrForRecipe);
+        return view('recipes.show')->with('recipe', $recipe)->with('ingrForRecipe', $ingrForRecipe)->with('stepsForRecipe', $stepsForRecipe);
     }
     public function newRecipe()
     {
@@ -61,6 +64,12 @@ class RecipeController extends Controller
             $recipe->ingredients()->create([
                 'ingredient' => $ingredient
                 ]);
+        }
+
+        foreach($request->processes as $process) {
+            $recipe->processes()->create([
+                'process' => $process
+            ]);
         }
 
 /*          Auth::user()->recipes()->create([

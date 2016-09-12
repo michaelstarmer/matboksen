@@ -44,7 +44,9 @@
           <div class="title-border"></div>
           <h2 class="cursive-heading">Fremgangsmåte</h2 class="cursive-heading">
           <div class="title-border"></div>
-          <p>{{ $recipe->process }}</p>
+          @foreach ($stepsForRecipe as $step)
+            <p>{{ $step->process }}</p>
+          @endforeach
         </div>
       </div>
     </div>

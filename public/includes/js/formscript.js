@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var max_fields      = 20;
-    var wrapper         = $(".ingredient-wrapper");
+    var wrapper         = $(".iwrap");
     var add_button      = $(".add-fields-button");
 
     var x = 1;
@@ -8,11 +8,11 @@ $(document).ready(function() {
         e.preventDefault();
         if(x < max_fields){
             x++;
-            $(wrapper).append('<div class="form-group"><label class="sr-only" for="reg-lastname">Etternavn</label><input type="text" name="ingredients[]" placeholder="Ingredienser..." class="form-last-name form-control"></div>');
+            $(wrapper).append('<div class="form-group iwrap"><label class="sr-only" for="reg-lastname">Etternavn</label><input type="text" name="ingredients[]" placeholder="Ingredienser..." class="form-last-name form-control"></div>');
         }
     });
 
-    var wrapper             = $('.process-wrapper');
+    var process_wrapper     = $('.pwrap');
     var add_process_button  = $('.add-process-button');
     var y = 1;
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
         e.preventDefault();
         if(y < max_fields){
             y++;
-            $(wrapper).append('<div class="form-group"><label class="sr-only" for="reg-lastname">Etternavn</label><textarea type="text" name="processes[]" placeholder="Fremgangsmåte..." class="form-last-name form-control"></textarea>  </div>');
+            $(process_wrapper).append('<div class="form-group pwrap"><label class="sr-only" for="reg-lastname">Etternavn</label><textarea type="text" name="processes[]" placeholder="Fremgangsmåte..." class="form-last-name form-control"></textarea>  </div>');
         }
     });
 

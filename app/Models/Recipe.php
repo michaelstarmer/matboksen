@@ -20,4 +20,8 @@ class Recipe extends Model
     {
         return $this->hasMany('Matboksen\Models\Ingredient', 'recipe_id');
     }
+    public function processes()
+    {
+        return $this->hasMany('Matboksen\Models\Process', 'recipe_id');
+    }
 }
