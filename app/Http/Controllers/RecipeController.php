@@ -56,6 +56,9 @@ class RecipeController extends Controller
         if($file) {
             Storage::disk('public')->put($filename, File::get($file));
         }
+        else {
+            return redirect()->route('home');
+        }
 
         foreach($request->ingredients as $ingredient){
             $recipe->ingredients()->create(['ingredient' => $ingredient]);
