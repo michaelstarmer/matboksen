@@ -17,17 +17,20 @@ use Illuminate\Http\Request;
 class RecipeController extends Controller
 {
     public function getRecipe($singleRecipe) {
-        // For displaying individual recipes.
+        // For displaying individual recipes. NOT USED?
         $recipe = Recipe::where('title', $singleRecipe)->first();
 
+        // Find id of current recipe
         $recipeId = DB::table('recipes')->select('id')
         ->where('title', $singleRecipe)
         ->first();
 
+        // Finds ingredients where foreign key "recipe_id" equals the recipe id
         $ingrForRecipe = DB::table('ingredients')->select('ingredient')
         ->where('recipe_id', $recipeId->id)
         ->get();
 
+        // Finds steps where foreign key "recipe_id" equals the recipe id
         $stepsForRecipe = DB::table('processes')->select('process')
         ->where('recipe_id', $recipeId->id)
         ->get();
@@ -36,6 +39,7 @@ class RecipeController extends Controller
             abort(404);
         }
 
+        // Sending all retrieved info to view.
         return view('recipes.show')->with('recipe', $recipe)->with('ingrForRecipe', $ingrForRecipe)->with('stepsForRecipe', $stepsForRecipe);
     }
     public function newRecipe()
