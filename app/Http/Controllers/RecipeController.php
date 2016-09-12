@@ -54,7 +54,7 @@ class RecipeController extends Controller
         $file = $request->file('image');
         $filename = $request['title'] . '.jpg';
         if($file) {
-            Storage::disk('local')->put($filename, File::get($file));
+            Storage::disk('public')->put($filename, File::get($file));
         }
 
         foreach($request->ingredients as $ingredient){
