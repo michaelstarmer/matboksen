@@ -51,11 +51,11 @@ class RecipeController extends Controller
         $recipe->description = $request->description;
         $recipe->process = $request->process;
         $recipe->save();
-/*        $file = $request->file('image');
+        $file = $request->file('image');
         $filename = $request['title'] . '.jpg';
         if($file) {
             Storage::disk('public')->put($filename, File::get($file));
-        }*/
+        }
 
         foreach($request->ingredients as $ingredient){
             $recipe->ingredients()->create(['ingredient' => $ingredient]);
