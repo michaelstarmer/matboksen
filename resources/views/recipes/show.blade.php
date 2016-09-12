@@ -4,14 +4,17 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-3">
-        <img src="http://placehold.it/250x250">
+      <div class="col-lg-4">
+        <div class="thumbnail">
+          <img src="{{ route('recipe.image', ['filename' => $recipe->title . '.jpg']) }}">
+        </div>
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-7">
         <div class="description-box">
           <div class="title-border"></div>
           <h2 class="cursive-heading">{{ $recipe->title }}</h2 class="cursive-heading">
           <div class="title-border"></div>
+          <p>{{ $recipe->description }}</p>
         </div>
       </div>
     </div>
@@ -28,6 +31,11 @@
                 <li>{{ $ingr->ingredient }}</li>
             @endforeach
             </ul>
+            <div class="title-border"></div>
+            <form action="{{ url('recipe/' .$recipe->id) }}" method="post">
+                <button type="submit" class="btn btn-danger"><i class="fa fa-shopping-cart"></i> Lag handleliste</button>
+                {{ csrf_field() }}
+            </form>
           </div>
         </div>
       </div>
@@ -36,28 +44,28 @@
           <div class="title-border"></div>
           <h2 class="cursive-heading">Fremgangsmåte</h2 class="cursive-heading">
           <div class="title-border"></div>
+          <p>{{ $recipe->process }}</p>
         </div>
       </div>
     </div>
   </div>
 
-  <tr>
-    <!-- Task Name -->
+{{--   <tr>
     <td class="table-text">
         <div>{{ $recipe->name }}</div>
     </td>
 
-    <!-- Delete Button -->
+
     <td>
         <form action="{{ url('recipe/'.$recipe->id) }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
 
             <button type="submit" class="btn btn-danger">
-                <i class="fa fa-trash"></i> Delete
+                <i class="fa fa-trash"></i> Slett
             </button>
         </form>
     </td>
-</tr>
+</tr> --}}
 
 @stop

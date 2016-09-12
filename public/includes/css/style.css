@@ -12,6 +12,13 @@ body {
 nav {
     line-height: 15px;
 }
+nav li {
+    padding-top: 7px;
+}
+
+nav .navbar-header {
+    padding-top: 7px;
+}
 
 strong { font-weight: 500; }
 
@@ -19,6 +26,10 @@ a, a:hover, a:focus {
 	color: #19b9e7;
 	text-decoration: none;
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
+.alert {
+    text-align: left;
 }
 
 h1, h2 {
@@ -193,6 +204,11 @@ h2.cursive-heading {
   min-height: 250px;
   padding: 20px;
   text-align: left; }
+
+.description-box p {
+    text-align: center;
+    font-weight: 400;
+}
 
 #bottom {
   margin-top: 15px; }

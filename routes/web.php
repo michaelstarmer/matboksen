@@ -1,5 +1,6 @@
 <?php
 use Matboksen\Models\Recipe;
+use Matboksen\Models\Task;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,4 +67,28 @@ Route::delete('/recipe/{singleRecipe}', function(Recipe $recipe) {
     $recipe->delete();
 
     return redirect('/');
+});
+Route::get('/recipeimage/{filename}', [
+    'uses' => 'RecipeController@getRecipeImage',
+    'as' => 'recipe.image'
+]);
+Route::post('/recipe/{singleRecipe}', [
+    'uses' => 'RecipeController@ingrToShoplist',
+    'as' => 'tasklist.post'
+]);
+
+/**
+* Shopping list
+*/
+Route::get('/handleliste', [
+    'uses' => 'TaskController@getTask',
+    'as' => 'shoplist.index'
+]);
+Route::post('/task', [
+    'uses' => 'TaskController@postTask',
+    'as' => 'task.post'
+]);
+Route::delete('/task/{task}', function(Task $task) {
+    $task->delete();
+    return redirect('/handleliste');
 });

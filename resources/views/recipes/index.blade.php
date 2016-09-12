@@ -25,18 +25,24 @@
                                 <div class="form-top">
                                     <div class="form-top-left">
                                         <h3>{{ Auth::user()->getFirstnameOrUsername() }}s nye oppskrift</h3>
-                                        <p>Fyll inn feltene å få tilgang <strong>umiddelbart!</strong></p>
+                                        <p>Fyll inn feltene og klikk på <strong>"Legg i dåsa"</strong></p>
                                     </div>
                                     <div class="form-top-right">
                                         <i class="fa fa-cutlery"></i>
                                     </div>
                                 </div>
                                 <div class="form-bottom">
-                                    <form role="form" action="{{ route('recipe.post') }}" method="post" class="registration-form">
+                                    <form role="form" action="{{ route('recipe.post') }}" method="post" class="registration-form" enctype="multipart/form-data">
                                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                                             <label class="sr-only" for="reg-email">Epost</label>
                                             <input type="text" name="title" placeholder="Navnet på retten..." class="form-email form-control" id="reg-email" value="{{ Request::old('email') ?: '' }}">
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="image">Bilde (kun .jpg)</label>
+                                            <input type="file" name="image" class="form-control" id="image">
+                                        </div>
+
                                         <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                                             <label class="sr-only" for="reg-lastname">Etternavn</label>
                                             <textarea type="text" name="description" placeholder="En kort beskrivelse..." class="form-last-name form-control"></textarea>  
@@ -53,7 +59,7 @@
                                             <textarea type="text" name="process" placeholder="Fremgangsmåte..." class="form-last-name form-control"></textarea>  
                                         </div>
 
-                                        <button type="submit" name="registerform" class="btn">Legg i kæssæ!</button>
+                                        <button type="submit" name="registerform" class="btn">Legg i dåsa!</button>
                                         <input type="hidden" name="_token" value="{{ Session::token() }}">
                                     </form>
                                 </div>

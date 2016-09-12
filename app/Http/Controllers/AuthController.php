@@ -43,7 +43,7 @@ class AuthController extends Controller
             if (!Auth::attempt($request->only(['email', 'password']), $request->has('remember'))) {
             return redirect()->back()->with('info', 'Could not sign you in with those details.');
         }
-        return redirect()->route('home')->with('info', 'Du er nå logget inn, din brilliante kulinariske jævel :)');
+        return redirect()->route('home')->with('info', 'Du er nå logget inn! :)');
     }
     public function getSignout()
     {
