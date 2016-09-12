@@ -12,7 +12,7 @@
                             <div class="description">
                                 <p>
                                     På denne siden kan du <strong>legge til nye </strong> oppskrifter i kassa. Bare smell inn oppskriften under.
-                                    Har du funnet en feil på siden? <a href="http://azmind.com" target="_blank"><strong>Rapporter her</strong></a>.
+                                    Har du funnet en feil på siden? <a href="#" target="_blank"><strong>Rapporter her</strong></a>.
                                 </p>
                             </div>
                         </div>

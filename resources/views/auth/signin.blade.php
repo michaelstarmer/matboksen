@@ -12,7 +12,7 @@
                             <div class="description">
                                 <p>
                                     Dette er en plass du kan <strong>finne og lagre</strong> de beste oppskriftene. 
-                                    Sjekk ut mer info <a href="http://azmind.com" target="_blank"><strong>på hjelpesiden</strong></a>.
+                                    Sjekk ut mer info <a href="" target="_blank"><strong>på hjelpesiden</strong></a>.
                                 </p>
                             </div>
                         </div>
