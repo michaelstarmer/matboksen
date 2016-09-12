@@ -3,8 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>MatBoksen</title>
-        <!-- CSS -->
+        <!-- Viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+        <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
         <link rel="stylesheet" href="{{ URL::asset('includes/bootstrap/css/bootstrap.min.css') }}">
