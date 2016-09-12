@@ -192,6 +192,11 @@ h2.cursive-heading {
   color: #e67e22;
   text-align: center; }
 
+.recipe-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .title-border {
     height: 2px;
     background: #eee;

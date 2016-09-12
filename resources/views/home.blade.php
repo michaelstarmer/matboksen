@@ -7,9 +7,11 @@
       @if (!$recipes->count())
         <p>Ingen oppskrifter er lagt inn.</p>
       @else
-        @foreach ($recipes as $recipe)
-          @include('recipes/partials/recipeblock')
-        @endforeach
+        <div class="recipe-wrapper">
+            @foreach ($recipes as $recipe)
+              @include('recipes/partials/recipeblock')
+            @endforeach
+        </div>
       @endif
     </div>
 @stop
