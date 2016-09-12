@@ -45,26 +45,27 @@ class RecipeController extends Controller
         $this->validate($request, [
             'title' => 'required|max:100',
         ]);
-/*        $recipe = new Recipe;
+        $recipe = new Recipe;
         $recipe->title = $request->title;
         $recipe->description = $request->description;
         $recipe->process = $request->process;
         $recipe->save();
-        $file = $request->file('image');
+/*        $file = $request->file('image');
         $filename = $request['title'] . '.jpg';
+        
         if($file) {
             Storage::disk('public')->put($filename, File::get($file));
         }
 
         foreach($request->ingredients as $ingredient){
             $recipe->ingredients()->create(['ingredient' => $ingredient]);
-        }
+        }*/
 
           Auth::user()->recipes()->create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'process' => $request->input('process'),
-        ]);*/
+        ]);
 
         //DB::table('ingredients')->belongsToRecipe()->insert($capture_field_vals);
 
