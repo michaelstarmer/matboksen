@@ -41,7 +41,6 @@ class RecipeController extends Controller
     }
     public function postRecipe(Request $request)
     {
-        $capture_field_vals = $_POST["ingredients"];
 
         $this->validate($request, [
             'title' => 'required|max:100',
@@ -51,32 +50,32 @@ class RecipeController extends Controller
         $recipe->description = $request->description;
         $recipe->process = $request->process;
         $recipe->save();
-/*        $file = $request->file('image');
+        $file = $request->file('image');
         $filename = $request['title'] . '.jpg';
         if($file) {
             Storage::disk('public')->put($filename, File::get($file));
-        }*/
+        }
 
         foreach($request->ingredients as $ingredient){
             $recipe->ingredients()->create(['ingredient' => $ingredient]);
         }
 
-        /*  Auth::user()->recipes()->create([
+          Auth::user()->recipes()->create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'process' => $request->input('process'),
-        ]);*/
+        ]);
 
         //DB::table('ingredients')->belongsToRecipe()->insert($capture_field_vals);
 
         return redirect()->route('home')
             ->with('info', 'Oppskrift lagret.');
     }
-/*    public function getRecipeImage($filename)
+    public function getRecipeImage($filename)
     {
         $file = Storage::disk('public')->get($filename);
         return new Response($file, 200);
-    }*/
+    }
     public function ingrToShoplist($singleRecipe)
     {
 
