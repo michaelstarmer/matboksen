@@ -42,15 +42,15 @@ class RecipeController extends Controller
     public function postRecipe(Request $request)
     {
 
-        $this->validate($request, [
+/*        $this->validate($request, [
             'title' => 'required|max:100',
         ]);
         $recipe = new Recipe;
         $recipe->title = $request->title;
         $recipe->description = $request->description;
         $recipe->process = $request->process;
-        $recipe->save();
-/*        $file = $request->file('image');
+        $recipe->save();*/
+        $file = $request->file('image');
         $filename = $request['title'] . '.jpg';
         
         if($file) {
@@ -59,13 +59,13 @@ class RecipeController extends Controller
 
         foreach($request->ingredients as $ingredient){
             $recipe->ingredients()->create(['ingredient' => $ingredient]);
-        }*/
+        }
 
-/*          Auth::user()->recipes()->create([
+          Auth::user()->recipes()->create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'process' => $request->input('process'),
-        ]);*/
+        ]);
 
         //DB::table('ingredients')->belongsToRecipe()->insert($capture_field_vals);
 
