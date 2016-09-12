@@ -54,10 +54,14 @@
                                             </div>
                                         </div>
                                         <button type="button" class="btn btn-info add-fields-button">Legg til...</button>
-                                        <div class="form-group{{ $errors->has('process') ? ' has-error' : '' }}">
-                                            <label class="sr-only" for="reg-lastname">Etternavn</label>
-                                            <textarea type="text" name="process" placeholder="Fremgangsmåte..." class="form-last-name form-control"></textarea>  
+
+                                        <div class="process-wrapper">
+                                            <div class="form-group{{ $errors->has('process') ? ' has-error' : '' }}">
+                                                <label class="sr-only" for="reg-lastname">Etternavn</label>
+                                                <textarea type="text" name="processes[]" placeholder="Fremgangsmåte..." class="form-last-name form-control"></textarea>  
+                                            </div>
                                         </div>
+                                        <button type="button" class="btn btn-info add-process-button">Legg til...</button>
 
                                         <button type="submit" name="registerform" class="btn">Legg i dåsa!</button>
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
