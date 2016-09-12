@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+// Changing default file storage
     /*
     |--------------------------------------------------------------------------
     | Default Filesystem Disk
