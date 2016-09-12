@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="main-navigation">
            <ul class="nav navbar-nav">
               <li><a href="{{ route('recipe.new') }}">Legg til</a></li>
-              <li><a href="{{ route('shoplist.index') }}">Handleliste</a></li>
+              <li><a href="{{ route('shoplist.index') }}">Hanwedleliste</a></li>
               <li role="separator" class="divider"></li>
           </ul>
 
